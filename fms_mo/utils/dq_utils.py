@@ -77,7 +77,7 @@ def config_quantize_smooth_layers(qcfg: dict):
         qcfg["qlayer_name_pattern"] = ["model.layers."]
         qcfg["scale_layers"] = ["k_proj", "v_proj", "gate_proj", "up_proj"]
         # NOTE: supported granite-v3 models do not need layer skip for large magnitude
-    elif "mixtral" in qcfg["model"]:
+    elif "Mixtral" in qcfg["model"]:
         qcfg["qlayer_name_pattern"] = (
             ["model.layers"] if qcfg["nbits_bmm1"] == 32 else []
         )
